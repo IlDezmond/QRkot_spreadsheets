@@ -59,6 +59,9 @@ FIRST_SUPERUSER_PASSWORD=<пароль суперпользователя>
 alembic upgrade head
 ```
 
+Первый суперпользователь будет создан автоматически при указании параметров
+First_superuser_email и First_superuser_password в .env
+
 ## Запуск и использование:
 Для локального запуска выполните команду:
 ```

@@ -20,8 +20,8 @@ async def spreadsheets_create(wrapper_services: Aiogoogle) -> str:
                 'sheetId': 0,
                 'title': 'Лист1',
                 'gridProperties': {
-                    'rowCount': 100,
-                    'columnCount': 11
+                    'rowCount': settings.row_count,
+                    'columnCount': settings.column_count
                 }
             }
         }]
@@ -29,8 +29,7 @@ async def spreadsheets_create(wrapper_services: Aiogoogle) -> str:
     response = await wrapper_services.as_service_account(
         service.spreadsheets.create(json=spreadsheet_body)
     )
-    spreadsheetid = response['spreadsheetId']
-    return spreadsheetid
+    return response['spreadsheetId']
 
 
 async def set_user_permissions(
@@ -48,7 +47,7 @@ async def set_user_permissions(
             sendNotificationEmail=False,
             fileId=spreadsheetid,
             json=permissions_body,
-            fields="id"
+            fields='id'
         )
     )
 

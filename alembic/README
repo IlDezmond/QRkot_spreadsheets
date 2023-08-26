@@ -1,1 +1,15 @@
 Generic single-database configuration with an async dbapi.
+
+alembic revision -m "<message>": Создает новую миграцию с указанным <message>. Миграции используются для версионирования схемы базы данных.
+
+alembic upgrade head: Применяет все несинхронизированные миграции к базе данных, обновляя ее до последней версии.
+
+alembic upgrade <migration>: Применяет указанную <migration> к базе данных, обновляя ее структуру до соответствующей версии.
+
+alembic downgrade <migration>: Откатывает базу данных до указанной <migration>, отменяя все миграции после нее.
+
+alembic current: Выводит текущую версию базы данных.
+
+alembic history: Показывает историю всех миграций.
+
+alembic show <migration>: Показывает информацию о указанной <migration>, включая ее родительские миграции и описание.

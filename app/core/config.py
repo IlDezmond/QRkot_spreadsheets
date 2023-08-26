@@ -14,6 +14,8 @@ class Settings(BaseSettings):
     jwt_lifetime: int = 3600
     min_password_length: int = 3
     datetime_format: str = '%Y/%m/%d %H:%M:%S'
+    row_count: int = 100
+    column_count: int = 11
 
     type: Optional[str] = None
     project_id: Optional[str] = None
